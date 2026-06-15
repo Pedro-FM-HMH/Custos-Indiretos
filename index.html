@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -252,7 +252,9 @@ body{font-family:'Open Sans',sans-serif;background:var(--bg);color:var(--text);f
 .freq-resumo-table th{background:#f1f7fb;color:#0a5372;font-weight:700;padding:.4rem .6rem;text-align:left;border-bottom:2px solid #bae6fd}
 .freq-resumo-table td{padding:.38rem .6rem;border-bottom:1px solid #f1f5f9;color:#334155}
 .freq-resumo-table td.num{text-align:right;font-variant-numeric:tabular-nums}
-.freq-resumo-table tr.best td{background:#f0fdf4;font-weight:700}
+.freq-resumo-table tr.best td{background:#fff5f5;color:#c0392b;font-weight:700}
+.freq-kpi-card.freq-kpi-clickable{cursor:pointer;transition:transform .15s,box-shadow .15s}
+.freq-kpi-card.freq-kpi-clickable:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,146,188,.18)}
 .freq-resumo-badge{display:inline-block;padding:.1rem .45rem;border-radius:99px;font-size:.65rem;font-weight:700;margin-left:.35rem}
 .freq-resumo-badge-green{background:#dcfce7;color:#166534}
 .freq-resumo-badge-amber{background:#fef9c3;color:#854d0e}
@@ -852,17 +854,17 @@ body{font-family:'Open Sans',sans-serif;background:var(--bg);color:var(--text);f
           <div class="freq-kpi-value">61</div>
           <div class="freq-kpi-label">Total Colaboradores</div>
         </div>
-        <div class="freq-kpi-card freq-kpi-green">
+        <div class="freq-kpi-card freq-kpi-green freq-kpi-clickable" title="Ver lista" onclick="freqScrollToSection('freq-sec-diario')">
           <div class="freq-kpi-value">47 <span class="freq-kpi-pct">77.0%</span></div>
-          <div class="freq-kpi-label">✔ Uso Diário</div>
+          <div class="freq-kpi-label">✔ Uso Diário <i class="fa-solid fa-arrow-down" style="font-size:.6rem;margin-left:.3rem"></i></div>
         </div>
-        <div class="freq-kpi-card freq-kpi-amber">
+        <div class="freq-kpi-card freq-kpi-amber freq-kpi-clickable" title="Ver lista" onclick="freqScrollToSection('freq-sec-esporadico')">
           <div class="freq-kpi-value">10 <span class="freq-kpi-pct">16.4%</span></div>
-          <div class="freq-kpi-label">◑ Esporádico</div>
+          <div class="freq-kpi-label">◑ Esporádico <i class="fa-solid fa-arrow-down" style="font-size:.6rem;margin-left:.3rem"></i></div>
         </div>
-        <div class="freq-kpi-card freq-kpi-red">
+        <div class="freq-kpi-card freq-kpi-red freq-kpi-clickable" title="Ver lista" onclick="freqScrollToSection('freq-sec-nunca')">
           <div class="freq-kpi-value">4 <span class="freq-kpi-pct">6.6%</span></div>
-          <div class="freq-kpi-label">✖ Nunca Utilizou</div>
+          <div class="freq-kpi-label">✖ Nunca Utilizou <i class="fa-solid fa-arrow-down" style="font-size:.6rem;margin-left:.3rem"></i></div>
         </div>
       </div>
 
@@ -927,7 +929,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--bg);color:var(--text);f
           </tr>
         </thead>
         <tbody>
-          <tr class="freq-row-sep"><td colspan="9">✔ Uso Diário</td></tr>
+          <tr class="freq-row-sep" id="freq-sec-diario"><td colspan="9">✔ Uso Diário</td></tr>
           <tr><td class="freq-rank">1</td><td>406371</td><td>Andressa Amorim</td><td>HMH</td><td class="num">99</td><td class="num">20</td><td class="num">3,81</td><td>11/06/2026</td><td><span class="freq-badge freq-badge-green">Uso Diário</span></td></tr>
           <tr><td class="freq-rank">2</td><td>600747</td><td>Carlos Henrique Coutinho</td><td>HMH</td><td class="num">65</td><td class="num">14</td><td class="num">2,50</td><td>11/06/2026</td><td><span class="freq-badge freq-badge-green">Uso Diário</span></td></tr>
           <tr><td class="freq-rank">3</td><td>600798</td><td>Christian Barreto</td><td>HMH</td><td class="num">139</td><td class="num">23</td><td class="num">5,35</td><td>11/06/2026</td><td><span class="freq-badge freq-badge-green">Uso Diário</span></td></tr>
@@ -975,7 +977,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--bg);color:var(--text);f
           <tr><td class="freq-rank">45</td><td>404834</td><td>Isabela Almeida</td><td>HMH</td><td class="num">51</td><td class="num">12</td><td class="num">1,96</td><td>11/06/2026</td><td><span class="freq-badge freq-badge-green">Uso Diário</span></td></tr>
           <tr><td class="freq-rank">46</td><td>405364</td><td>Julia França</td><td>HMH</td><td class="num">41</td><td class="num">15</td><td class="num">1,58</td><td>11/06/2026</td><td><span class="freq-badge freq-badge-green">Uso Diário</span></td></tr>
           <tr><td class="freq-rank">47</td><td>600989</td><td>Lucas Valácio de Carvalho</td><td>Robert Half</td><td class="num">46</td><td class="num">10</td><td class="num">1,77</td><td>11/06/2026</td><td><span class="freq-badge freq-badge-green">Uso Diário</span></td></tr>
-          <tr class="freq-row-sep"><td colspan="9">◑ Esporádico</td></tr>
+          <tr class="freq-row-sep" id="freq-sec-esporadico"><td colspan="9">◑ Esporádico</td></tr>
           <tr><td class="freq-rank">48</td><td>406386</td><td>Bárbara Rocha</td><td>HMH</td><td class="num">2</td><td class="num">2</td><td class="num">0,08</td><td>06/05/2026</td><td><span class="freq-badge freq-badge-amber">Esporádico</span></td></tr>
           <tr><td class="freq-rank">49</td><td>404513</td><td>Cristian Siqueira</td><td>HMH</td><td class="num">8</td><td class="num">6</td><td class="num">0,31</td><td>22/05/2026</td><td><span class="freq-badge freq-badge-amber">Esporádico</span></td></tr>
           <tr><td class="freq-rank">50</td><td>195206</td><td>Fabiola Pires</td><td>HMH</td><td class="num">27</td><td class="num">8</td><td class="num">1,04</td><td>02/06/2026</td><td><span class="freq-badge freq-badge-amber">Esporádico</span></td></tr>
@@ -986,7 +988,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--bg);color:var(--text);f
           <tr><td class="freq-rank">55</td><td>405252</td><td>Thales Cordeiro</td><td>HMH</td><td class="num">12</td><td class="num">2</td><td class="num">0,46</td><td>19/03/2026</td><td><span class="freq-badge freq-badge-amber">Esporádico</span></td></tr>
           <tr><td class="freq-rank">56</td><td>404506</td><td>Victor Neves</td><td>HMH</td><td class="num">1</td><td class="num">1</td><td class="num">0,04</td><td>05/02/2026</td><td><span class="freq-badge freq-badge-amber">Esporádico</span></td></tr>
           <tr><td class="freq-rank">57</td><td>600806</td><td>Vitória Medeiros</td><td>HMH</td><td class="num">9</td><td class="num">8</td><td class="num">0,35</td><td>27/05/2026</td><td><span class="freq-badge freq-badge-amber">Esporádico</span></td></tr>
-          <tr class="freq-row-sep"><td colspan="9">✖ Nunca Utilizou</td></tr>
+          <tr class="freq-row-sep" id="freq-sec-nunca"><td colspan="9">✖ Nunca Utilizou</td></tr>
           <tr><td class="freq-rank">58</td><td>600256</td><td>Eliane Wanderei</td><td>HMH</td><td class="num">0</td><td class="num">0</td><td class="num">0,00</td><td>—</td><td><span class="freq-badge freq-badge-red">Nunca Utilizou</span></td></tr>
           <tr><td class="freq-rank">59</td><td>276203</td><td>Larissa Freitas</td><td>HMH</td><td class="num">0</td><td class="num">0</td><td class="num">0,00</td><td>—</td><td><span class="freq-badge freq-badge-red">Nunca Utilizou</span></td></tr>
           <tr><td class="freq-rank">60</td><td>407064</td><td>Pablo Santoro</td><td>HMH</td><td class="num">0</td><td class="num">0</td><td class="num">0,00</td><td>—</td><td><span class="freq-badge freq-badge-red">Nunca Utilizou</span></td></tr>
@@ -1032,21 +1034,19 @@ body{font-family:'Open Sans',sans-serif;background:var(--bg);color:var(--text);f
             <div class="freq-section-title" style="font-size:.68rem;margin:.4rem 0 .3rem">Custo/passageiro (total período)</div>
             <div class="freq-pass-grid">
               <div class="freq-pass-cell"><div class="freq-pass-cell-val">R$ 63.140</div><div class="freq-pass-cell-lbl">1 pass.</div></div>
-              <div class="freq-pass-cell"><div class="freq-pass-cell-val">R$ 12.628</div><div class="freq-pass-cell-lbl">5 pass.</div></div>
-              <div class="freq-pass-cell"><div class="freq-pass-cell-val">R$ 6.314</div><div class="freq-pass-cell-lbl">10 pass.</div></div>
               <div class="freq-pass-cell"><div class="freq-pass-cell-val">R$ 4.209</div><div class="freq-pass-cell-lbl">15 pass.</div></div>
             </div>
             <table class="freq-month-table" style="margin-top:.7rem">
-              <thead><tr><th>Mês</th><th class="num">Dias</th><th class="num">Custo Total</th><th class="num">/pass (5p)</th><th class="num">/pass (15p)</th></tr></thead>
+              <thead><tr><th>Mês</th><th class="num">Dias</th><th class="num">Custo Total</th><th class="num">/pass (15p)</th></tr></thead>
               <tbody>
-                <tr><td>Jun/26</td><td class="num">22</td><td class="num">R$ 9.020</td><td class="num">R$ 1.804</td><td class="num">R$ 601</td></tr>
-                <tr><td>Jul/26</td><td class="num">23</td><td class="num">R$ 9.430</td><td class="num">R$ 1.886</td><td class="num">R$ 629</td></tr>
-                <tr><td>Ago/26</td><td class="num">21</td><td class="num">R$ 8.610</td><td class="num">R$ 1.722</td><td class="num">R$ 574</td></tr>
-                <tr><td>Set/26</td><td class="num">22</td><td class="num">R$ 9.020</td><td class="num">R$ 1.804</td><td class="num">R$ 601</td></tr>
-                <tr><td>Out/26</td><td class="num">22</td><td class="num">R$ 9.020</td><td class="num">R$ 1.804</td><td class="num">R$ 601</td></tr>
-                <tr><td>Nov/26</td><td class="num">21</td><td class="num">R$ 8.610</td><td class="num">R$ 1.722</td><td class="num">R$ 574</td></tr>
-                <tr><td>Dez/26</td><td class="num">23</td><td class="num">R$ 9.430</td><td class="num">R$ 1.886</td><td class="num">R$ 629</td></tr>
-                <tr class="total-row"><td>TOTAL</td><td class="num">154</td><td class="num">R$ 63.140</td><td class="num">R$ 12.628</td><td class="num">R$ 4.209</td></tr>
+                <tr><td>Jun/26</td><td class="num">22</td><td class="num">R$ 9.020</td><td class="num">R$ 601</td></tr>
+                <tr><td>Jul/26</td><td class="num">23</td><td class="num">R$ 9.430</td><td class="num">R$ 629</td></tr>
+                <tr><td>Ago/26</td><td class="num">21</td><td class="num">R$ 8.610</td><td class="num">R$ 574</td></tr>
+                <tr><td>Set/26</td><td class="num">22</td><td class="num">R$ 9.020</td><td class="num">R$ 601</td></tr>
+                <tr><td>Out/26</td><td class="num">22</td><td class="num">R$ 9.020</td><td class="num">R$ 601</td></tr>
+                <tr><td>Nov/26</td><td class="num">21</td><td class="num">R$ 8.610</td><td class="num">R$ 574</td></tr>
+                <tr><td>Dez/26</td><td class="num">23</td><td class="num">R$ 9.430</td><td class="num">R$ 629</td></tr>
+                <tr class="total-row"><td>TOTAL</td><td class="num">154</td><td class="num">R$ 63.140</td><td class="num">R$ 4.209</td></tr>
               </tbody>
             </table>
           </div>
@@ -1067,21 +1067,19 @@ body{font-family:'Open Sans',sans-serif;background:var(--bg);color:var(--text);f
             <div class="freq-section-title" style="font-size:.68rem;margin:.4rem 0 .3rem">Custo/passageiro (total período)</div>
             <div class="freq-pass-grid">
               <div class="freq-pass-cell"><div class="freq-pass-cell-val">R$ 38.130</div><div class="freq-pass-cell-lbl">1 pass.</div></div>
-              <div class="freq-pass-cell"><div class="freq-pass-cell-val">R$ 7.626</div><div class="freq-pass-cell-lbl">5 pass.</div></div>
-              <div class="freq-pass-cell"><div class="freq-pass-cell-val">R$ 3.813</div><div class="freq-pass-cell-lbl">10 pass.</div></div>
               <div class="freq-pass-cell" style="background:#dcfce7"><div class="freq-pass-cell-val" style="color:#166534">R$ 2.542</div><div class="freq-pass-cell-lbl">15 pass.</div></div>
             </div>
             <table class="freq-month-table" style="margin-top:.7rem">
-              <thead><tr><th>Mês</th><th class="num">Dias</th><th class="num">Custo Total</th><th class="num">/pass (5p)</th><th class="num">/pass (15p)</th></tr></thead>
+              <thead><tr><th>Mês</th><th class="num">Dias</th><th class="num">Custo Total</th><th class="num">/pass (15p)</th></tr></thead>
               <tbody>
-                <tr><td>Jun/26</td><td class="num">13</td><td class="num">R$ 5.330</td><td class="num">R$ 1.066</td><td class="num">R$ 355</td></tr>
-                <tr><td>Jul/26</td><td class="num">14</td><td class="num">R$ 5.740</td><td class="num">R$ 1.148</td><td class="num">R$ 383</td></tr>
-                <tr><td>Ago/26</td><td class="num">12</td><td class="num">R$ 4.920</td><td class="num">R$ 984</td><td class="num">R$ 328</td></tr>
-                <tr><td>Set/26</td><td class="num">14</td><td class="num">R$ 5.740</td><td class="num">R$ 1.148</td><td class="num">R$ 383</td></tr>
-                <tr><td>Out/26</td><td class="num">13</td><td class="num">R$ 5.330</td><td class="num">R$ 1.066</td><td class="num">R$ 355</td></tr>
-                <tr><td>Nov/26</td><td class="num">12</td><td class="num">R$ 4.920</td><td class="num">R$ 984</td><td class="num">R$ 328</td></tr>
-                <tr><td>Dez/26</td><td class="num">15</td><td class="num">R$ 6.150</td><td class="num">R$ 1.230</td><td class="num">R$ 410</td></tr>
-                <tr class="total-row"><td>TOTAL</td><td class="num">93</td><td class="num">R$ 38.130</td><td class="num">R$ 7.626</td><td class="num">R$ 2.542</td></tr>
+                <tr><td>Jun/26</td><td class="num">13</td><td class="num">R$ 5.330</td><td class="num">R$ 355</td></tr>
+                <tr><td>Jul/26</td><td class="num">14</td><td class="num">R$ 5.740</td><td class="num">R$ 383</td></tr>
+                <tr><td>Ago/26</td><td class="num">12</td><td class="num">R$ 4.920</td><td class="num">R$ 328</td></tr>
+                <tr><td>Set/26</td><td class="num">14</td><td class="num">R$ 5.740</td><td class="num">R$ 383</td></tr>
+                <tr><td>Out/26</td><td class="num">13</td><td class="num">R$ 5.330</td><td class="num">R$ 355</td></tr>
+                <tr><td>Nov/26</td><td class="num">12</td><td class="num">R$ 4.920</td><td class="num">R$ 328</td></tr>
+                <tr><td>Dez/26</td><td class="num">15</td><td class="num">R$ 6.150</td><td class="num">R$ 410</td></tr>
+                <tr class="total-row"><td>TOTAL</td><td class="num">93</td><td class="num">R$ 38.130</td><td class="num">R$ 2.542</td></tr>
               </tbody>
             </table>
           </div>
@@ -1110,8 +1108,6 @@ body{font-family:'Open Sans',sans-serif;background:var(--bg);color:var(--text);f
             </div>
             <div class="freq-pass-grid" style="margin-bottom:.7rem">
               <div class="freq-pass-cell"><div class="freq-pass-cell-val">R$ 97.020</div><div class="freq-pass-cell-lbl">1 pass.</div></div>
-              <div class="freq-pass-cell"><div class="freq-pass-cell-val">R$ 19.404</div><div class="freq-pass-cell-lbl">5 pass.</div></div>
-              <div class="freq-pass-cell"><div class="freq-pass-cell-val">R$ 9.702</div><div class="freq-pass-cell-lbl">10 pass.</div></div>
               <div class="freq-pass-cell"><div class="freq-pass-cell-val">R$ 6.468</div><div class="freq-pass-cell-lbl">15 pass.</div></div>
             </div>
             <div class="freq-section-title" style="font-size:.68rem;margin:.2rem 0 .4rem;border-color:#f59e0b;color:#854d0e">Unamar</div>
@@ -1121,8 +1117,6 @@ body{font-family:'Open Sans',sans-serif;background:var(--bg);color:var(--text);f
             </div>
             <div class="freq-pass-grid">
               <div class="freq-pass-cell"><div class="freq-pass-cell-val">R$ 161.700</div><div class="freq-pass-cell-lbl">1 pass.</div></div>
-              <div class="freq-pass-cell"><div class="freq-pass-cell-val">R$ 32.340</div><div class="freq-pass-cell-lbl">5 pass.</div></div>
-              <div class="freq-pass-cell"><div class="freq-pass-cell-val">R$ 16.170</div><div class="freq-pass-cell-lbl">10 pass.</div></div>
               <div class="freq-pass-cell"><div class="freq-pass-cell-val">R$ 10.780</div><div class="freq-pass-cell-lbl">15 pass.</div></div>
             </div>
           </div>
@@ -1137,8 +1131,6 @@ body{font-family:'Open Sans',sans-serif;background:var(--bg);color:var(--text);f
             </div>
             <div class="freq-pass-grid" style="margin-bottom:.7rem">
               <div class="freq-pass-cell"><div class="freq-pass-cell-val">R$ 58.590</div><div class="freq-pass-cell-lbl">1 pass.</div></div>
-              <div class="freq-pass-cell"><div class="freq-pass-cell-val">R$ 11.718</div><div class="freq-pass-cell-lbl">5 pass.</div></div>
-              <div class="freq-pass-cell"><div class="freq-pass-cell-val">R$ 5.859</div><div class="freq-pass-cell-lbl">10 pass.</div></div>
               <div class="freq-pass-cell" style="background:#dcfce7"><div class="freq-pass-cell-val" style="color:#166534">R$ 3.906</div><div class="freq-pass-cell-lbl">15 pass.</div></div>
             </div>
             <div class="freq-section-title" style="font-size:.68rem;margin:.2rem 0 .4rem;border-color:#f59e0b;color:#854d0e">Unamar</div>
@@ -1148,8 +1140,6 @@ body{font-family:'Open Sans',sans-serif;background:var(--bg);color:var(--text);f
             </div>
             <div class="freq-pass-grid">
               <div class="freq-pass-cell"><div class="freq-pass-cell-val">R$ 97.650</div><div class="freq-pass-cell-lbl">1 pass.</div></div>
-              <div class="freq-pass-cell"><div class="freq-pass-cell-val">R$ 19.530</div><div class="freq-pass-cell-lbl">5 pass.</div></div>
-              <div class="freq-pass-cell"><div class="freq-pass-cell-val">R$ 9.765</div><div class="freq-pass-cell-lbl">10 pass.</div></div>
               <div class="freq-pass-cell" style="background:#dcfce7"><div class="freq-pass-cell-val" style="color:#166534">R$ 6.510</div><div class="freq-pass-cell-lbl">15 pass.</div></div>
             </div>
           </div>
@@ -1158,17 +1148,17 @@ body{font-family:'Open Sans',sans-serif;background:var(--bg);color:var(--text);f
         <!-- Tabela mensal RDO -->
         <div class="freq-section-title"><i class="fa-solid fa-table" style="color:#0092bc;margin-right:.3rem"></i>Detalhamento Mensal — Rio das Ostras (Seg–Sex)</div>
         <table class="freq-month-table">
-          <thead><tr><th>Mês</th><th class="num">Dias</th><th class="num">Custo RDO</th><th class="num">Custo Unamar</th><th class="num">/pass RDO (5p)</th><th class="num">/pass Unamar (5p)</th></tr></thead>
+          <thead><tr><th>Mês</th><th class="num">Dias</th><th class="num">Custo RDO</th><th class="num">Custo Unamar</th><th class="num">/pass RDO (15p)</th><th class="num">/pass Unamar (15p)</th></tr></thead>
           <tbody>
-            <tr><td>Jun/26</td><td class="num">22</td><td class="num">R$ 13.860</td><td class="num">R$ 23.100</td><td class="num">R$ 2.772</td><td class="num">R$ 4.620</td></tr>
-            <tr><td>Jul/26</td><td class="num">23</td><td class="num">R$ 14.490</td><td class="num">R$ 24.150</td><td class="num">R$ 2.898</td><td class="num">R$ 4.830</td></tr>
-            <tr><td>Ago/26</td><td class="num">21</td><td class="num">R$ 13.230</td><td class="num">R$ 22.050</td><td class="num">R$ 2.646</td><td class="num">R$ 4.410</td></tr>
-            <tr><td>Set/26</td><td class="num">22</td><td class="num">R$ 13.860</td><td class="num">R$ 23.100</td><td class="num">R$ 2.772</td><td class="num">R$ 4.620</td></tr>
-            <tr><td>Out/26</td><td class="num">22</td><td class="num">R$ 13.860</td><td class="num">R$ 23.100</td><td class="num">R$ 2.772</td><td class="num">R$ 4.620</td></tr>
-            <tr><td>Nov/26</td><td class="num">21</td><td class="num">R$ 13.230</td><td class="num">R$ 22.050</td><td class="num">R$ 2.646</td><td class="num">R$ 4.410</td></tr>
-            <tr><td>Dez/26</td><td class="num">23</td><td class="num">R$ 14.490</td><td class="num">R$ 24.150</td><td class="num">R$ 2.898</td><td class="num">R$ 4.830</td></tr>
-            <tr class="total-row"><td>TOTAL (5d)</td><td class="num">154</td><td class="num">R$ 97.020</td><td class="num">R$ 161.700</td><td class="num">R$ 19.404</td><td class="num">R$ 32.340</td></tr>
-            <tr class="total-row"><td>TOTAL (3d)</td><td class="num">93</td><td class="num">R$ 58.590</td><td class="num">R$ 97.650</td><td class="num">R$ 11.718</td><td class="num">R$ 19.530</td></tr>
+            <tr><td>Jun/26</td><td class="num">22</td><td class="num">R$ 13.860</td><td class="num">R$ 23.100</td><td class="num">R$ 924</td><td class="num">R$ 1.540</td></tr>
+            <tr><td>Jul/26</td><td class="num">23</td><td class="num">R$ 14.490</td><td class="num">R$ 24.150</td><td class="num">R$ 966</td><td class="num">R$ 1.610</td></tr>
+            <tr><td>Ago/26</td><td class="num">21</td><td class="num">R$ 13.230</td><td class="num">R$ 22.050</td><td class="num">R$ 882</td><td class="num">R$ 1.470</td></tr>
+            <tr><td>Set/26</td><td class="num">22</td><td class="num">R$ 13.860</td><td class="num">R$ 23.100</td><td class="num">R$ 924</td><td class="num">R$ 1.540</td></tr>
+            <tr><td>Out/26</td><td class="num">22</td><td class="num">R$ 13.860</td><td class="num">R$ 23.100</td><td class="num">R$ 924</td><td class="num">R$ 1.540</td></tr>
+            <tr><td>Nov/26</td><td class="num">21</td><td class="num">R$ 13.230</td><td class="num">R$ 22.050</td><td class="num">R$ 882</td><td class="num">R$ 1.470</td></tr>
+            <tr><td>Dez/26</td><td class="num">23</td><td class="num">R$ 14.490</td><td class="num">R$ 24.150</td><td class="num">R$ 966</td><td class="num">R$ 1.610</td></tr>
+            <tr class="total-row"><td>TOTAL (5d)</td><td class="num">154</td><td class="num">R$ 97.020</td><td class="num">R$ 161.700</td><td class="num">R$ 6.468</td><td class="num">R$ 10.780</td></tr>
+            <tr class="total-row"><td>TOTAL (3d)</td><td class="num">93</td><td class="num">R$ 58.590</td><td class="num">R$ 97.650</td><td class="num">R$ 3.906</td><td class="num">R$ 6.510</td></tr>
           </tbody>
         </table>
         <p style="font-size:.7rem;color:#94a3b8;margin:.4rem 0 0;text-align:right">Economia 2B vs 2A (RDO): <strong style="color:#166534">−R$ 38.430 (−39,6%)</strong> &nbsp;|&nbsp; Economia 2B vs 2A (Unamar): <strong style="color:#166534">−R$ 64.050 (−39,6%)</strong></p>
@@ -1197,24 +1187,22 @@ body{font-family:'Open Sans',sans-serif;background:var(--bg);color:var(--text);f
           <thead>
             <tr>
               <th>Rota / Cenário</th>
-              <th class="num">Custo/Dia</th>
-              <th class="num">Dias</th>
-              <th class="num">Custo Total</th>
-              <th class="num">/pass (1p)</th>
-              <th class="num">/pass (5p)</th>
-              <th class="num">/pass (15p)</th>
+              <th class="num">Custo/Dia (R$)</th>
+              <th class="num">Dias Totais (período)</th>
+              <th class="num">Custo Médio Mensal</th>
+              <th class="num">Custo Total Rota (R$)</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>Macaé — Seg a Sex <span class="freq-resumo-badge freq-resumo-badge-amber">1A</span></td><td class="num">R$ 410</td><td class="num">154</td><td class="num">R$ 63.140</td><td class="num">R$ 63.140</td><td class="num">R$ 12.628</td><td class="num">R$ 4.209</td></tr>
-            <tr class="best"><td>Macaé — Ter, Qua e Qui <span class="freq-resumo-badge freq-resumo-badge-green">1B ★</span></td><td class="num">R$ 410</td><td class="num">93</td><td class="num">R$ 38.130</td><td class="num">R$ 38.130</td><td class="num">R$ 7.626</td><td class="num">R$ 2.542</td></tr>
-            <tr><td>Rio das Ostras — Seg a Sex <span class="freq-resumo-badge freq-resumo-badge-amber">2A</span></td><td class="num">R$ 630</td><td class="num">154</td><td class="num">R$ 97.020</td><td class="num">R$ 97.020</td><td class="num">R$ 19.404</td><td class="num">R$ 6.468</td></tr>
-            <tr><td>Rio das Ostras — Ter, Qua e Qui <span class="freq-resumo-badge freq-resumo-badge-green">2B</span></td><td class="num">R$ 630</td><td class="num">93</td><td class="num">R$ 58.590</td><td class="num">R$ 58.590</td><td class="num">R$ 11.718</td><td class="num">R$ 3.906</td></tr>
-            <tr><td>Unamar — Seg a Sex <span class="freq-resumo-badge freq-resumo-badge-amber">3A</span></td><td class="num">R$ 1.050</td><td class="num">154</td><td class="num">R$ 161.700</td><td class="num">R$ 161.700</td><td class="num">R$ 32.340</td><td class="num">R$ 10.780</td></tr>
-            <tr><td>Unamar — Ter, Qua e Qui <span class="freq-resumo-badge freq-resumo-badge-green">3B</span></td><td class="num">R$ 1.050</td><td class="num">93</td><td class="num">R$ 97.650</td><td class="num">R$ 97.650</td><td class="num">R$ 19.530</td><td class="num">R$ 6.510</td></tr>
+            <tr><td>Macaé — Seg a Sex <span class="freq-resumo-badge freq-resumo-badge-amber">1A</span></td><td class="num">R$ 410,00</td><td class="num">154</td><td class="num">R$ 9.020,00</td><td class="num">R$ 63.140,00</td></tr>
+            <tr class="best"><td>Macaé — Ter, Qua, Qui <span class="freq-resumo-badge" style="background:#ffe4e6;color:#c0392b">1B ★</span></td><td class="num">R$ 410,00</td><td class="num">93</td><td class="num">R$ 5.447,14</td><td class="num">R$ 38.130,00</td></tr>
+            <tr><td>Rio das Ostras — Seg a Sex <span class="freq-resumo-badge freq-resumo-badge-amber">2A</span></td><td class="num">R$ 630,00</td><td class="num">154</td><td class="num">R$ 13.860,00</td><td class="num">R$ 97.020,00</td></tr>
+            <tr><td>Rio das Ostras — Ter, Qua, Qui <span class="freq-resumo-badge freq-resumo-badge-green">2B</span></td><td class="num">R$ 630,00</td><td class="num">93</td><td class="num">R$ 8.370,00</td><td class="num">R$ 58.590,00</td></tr>
+            <tr><td>Unamar — Seg a Sex <span class="freq-resumo-badge freq-resumo-badge-amber">3A</span></td><td class="num">R$ 1.050,00</td><td class="num">154</td><td class="num">R$ 23.100,00</td><td class="num">R$ 161.700,00</td></tr>
+            <tr><td>Unamar — Ter, Qua, Qui <span class="freq-resumo-badge freq-resumo-badge-green">3B</span></td><td class="num">R$ 1.050,00</td><td class="num">93</td><td class="num">R$ 13.950,00</td><td class="num">R$ 97.650,00</td></tr>
           </tbody>
         </table>
-        <p style="font-size:.7rem;color:#94a3b8;margin:.5rem 0 0;text-align:right"><span class="freq-resumo-badge freq-resumo-badge-green">★</span> Menor custo do período &nbsp;|&nbsp; Premissas: 15 vagas/van · custo por dia fixo · período Jun–Dez/2026</p>
+        <p style="font-size:.7rem;color:#94a3b8;margin:.5rem 0 0;text-align:right"><span class="freq-resumo-badge" style="background:#ffe4e6;color:#c0392b">★</span> Menor custo do período &nbsp;|&nbsp; Custo Médio Mensal = Custo Total ÷ 7 meses &nbsp;|&nbsp; Premissas: R$ 410/dia · 15 vagas/van</p>
       </div><!-- /sub-resumo -->
 
     </div><!-- /freq-pane-proj -->
@@ -5415,6 +5403,16 @@ function freqSwitchSub(id, btn) {
   document.querySelectorAll('#popup-freq-adm .freq-sub-tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('freq-sub-' + id).classList.add('active');
   btn.classList.add('active');
+}
+function freqScrollToSection(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const scroll = document.querySelector('#popup-freq-adm .freq-popup-scroll');
+  if (!scroll) return;
+  const elTop = el.getBoundingClientRect().top;
+  const scrollTop = scroll.getBoundingClientRect().top;
+  const offset = elTop - scrollTop + scroll.scrollTop - 12;
+  scroll.scrollTo({ top: offset, behavior: 'smooth' });
 }
 </script>
 </body>
